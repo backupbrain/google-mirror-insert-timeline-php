@@ -82,10 +82,11 @@ if(isset($_GET['code'])) {
 		);
 
 
-		$request = new HttpPost( $url );
+		$request = new HttpPost( $mirrorurl );
 		$request->setHeaders( $headers );
 		$request->setRawPostData( $jsonPost );
 		$request->send();
+		
 
 		// if all went well, we should get our JSON back
     	$result = json_decode($request->getHttpResponse());
